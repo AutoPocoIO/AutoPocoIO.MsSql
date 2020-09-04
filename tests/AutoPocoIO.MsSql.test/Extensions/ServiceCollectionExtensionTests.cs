@@ -36,12 +36,22 @@ namespace AutoPocoIO.MsSql.test.Extensions
             Assert.IsNotNull(provider.GetService<IConnectionStringBuilder>());
         }
 
+
+        public class DbContextTest1: DbContext
+        {
+
+        }
+
+        public class DbContextTest2 : DbContext
+        {
+
+        }
         [TestMethod]
         public void AddSqlServerDatabases()
         {
             var services = new ServiceCollection();
-            services.AddScoped<LogDbContext>();
-            services.AddScoped<AppDbContext>();
+            services.AddScoped<DbContextTest1>();
+            services.AddScoped<DbContextTest2>();
             services.ConfigureSqlServerApplicationDatabase("conn1");
 
             Assert.AreEqual(4, services.Count());
@@ -49,18 +59,18 @@ namespace AutoPocoIO.MsSql.test.Extensions
             var provider = services.BuildServiceProvider();
 
             //Dbs
-            Assert.IsNotNull(provider.GetService<LogDbContext>());
-            Assert.IsNotNull(provider.GetService<AppDbContext>());
+            Assert.IsNotNull(provider.GetService<DbContextTest1>());
+            Assert.IsNotNull(provider.GetService<DbContextTest2>());
 
             //ContextOptions
-            Assert.IsNotNull(provider.GetService<DbContextOptions<LogDbContext>>());
-            Assert.IsNotNull(provider.GetService<DbContextOptions<AppDbContext>>());
+            Assert.IsNotNull(provider.GetService<DbContextOptions<DbContextTest1>>());
+            Assert.IsNotNull(provider.GetService<DbContextOptions<DbContextTest2>>());
 
-            DbContextOptions option = provider.GetService<DbContextOptions<LogDbContext>>();
+            DbContextOptions option = provider.GetService<DbContextOptions<DbContextTest1>>();
             Assert.IsInstanceOfType(option.Extensions.ElementAt(0), typeof(Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension));
             Assert.IsInstanceOfType(option.Extensions.ElementAt(1), typeof(Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerOptionsExtension));
 
-            option = provider.GetService<DbContextOptions<AppDbContext>>();
+            option = provider.GetService<DbContextOptions<DbContextTest2>>();
             Assert.IsInstanceOfType(option.Extensions.ElementAt(0), typeof(Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension));
             Assert.IsInstanceOfType(option.Extensions.ElementAt(1), typeof(Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerOptionsExtension));
         }

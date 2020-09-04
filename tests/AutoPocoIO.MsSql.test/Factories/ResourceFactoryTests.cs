@@ -49,7 +49,7 @@ namespace AutoPocoIO.test.Factories
             var resourceServices = new ServiceCollection()
                 .AddSingleton(new Config())
                 .AddTransient(c => connStringFactory.Object)
-                .AddSingleton<ISchemaInitializer>(new SchemaInitializer(new Config(), Mock.Of<IDbSchemaBuilder>(), Mock.Of<IDbSchema>()))
+                .AddSingleton(Mock.Of<ISchemaInitializer>())
                 .BuildServiceProvider();
 
 

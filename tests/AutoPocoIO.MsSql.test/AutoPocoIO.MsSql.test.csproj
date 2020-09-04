@@ -10,7 +10,10 @@
   <PropertyGroup>
     <TargetFrameworks>net461;netcoreapp2.2;</TargetFrameworks>
     <IsPackable>false</IsPackable>
+    <AssemblyOriginatorKeyFile>..\..\sln\AutoPocoIO.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.4" />

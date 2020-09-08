@@ -22,7 +22,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.4" />
-    <PackageReference Include="AutoPocoIO" Version="1.0.0-alpha.127" />
+    <PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />
   </ItemGroup>
 
 

@@ -14,11 +14,24 @@
     <PackageId>AutoPocoIO.MsSql</PackageId>
     <Company>AutoPocoIO</Company>
     <Authors>AutoPocoIO</Authors>
-    <RepositoryUrl>https://github.com/AutoPocoIO/AutoPocoIO</RepositoryUrl>
+    <RepositoryUrl>https://github.com/AutoPocoIO/AutoPocoIO.MsSql</RepositoryUrl>
     <AssemblyOriginatorKeyFile>..\..\sln\AutoPocoIO.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>AutoPocoIcon.jpeg</PackageIcon>
+    <PackageTags>autopoco poco-generator poco mssql</PackageTags>
+    <PackageProjectUrl>http://autopoco.io/</PackageProjectUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\..\sln\AutoPocoIcon.jpeg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.4" />

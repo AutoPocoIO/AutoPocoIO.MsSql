@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net461;netcoreapp2.2;</TargetFrameworks>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>Extends AutoPoco to work with MsSql Server databases</Description>
     <PackageId>AutoPocoIO.MsSql</PackageId>
@@ -23,6 +23,10 @@
     <PackageIcon>AutoPocoIcon.jpeg</PackageIcon>
     <PackageTags>autopoco poco-generator poco mssql</PackageTags>
     <PackageProjectUrl>http://autopoco.io/</PackageProjectUrl>
+    <FileVersion>2.2.0.0</FileVersion>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <AssemblyName>AutoPocoIO.MsSql</AssemblyName>
+    <RootNamespace>AutoPocoIO.MsSql</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,12 +35,14 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.4" />
-    <PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="[2.2.0, 2.3.0)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.*" />
+    <!--<PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />-->
+    <PackageReference Include="AutoPocoIO" Version="2.2.0-beta.318" />
   </ItemGroup>
-  
+
   <Import Project="..\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems" Label="Shared" />
 
 

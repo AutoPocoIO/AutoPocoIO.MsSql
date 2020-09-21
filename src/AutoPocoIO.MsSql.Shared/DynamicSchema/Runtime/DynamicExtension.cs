@@ -1,7 +1,5 @@
 ﻿using AutoPocoIO.DynamicSchema.Db;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Query.Sql;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections.Generic;
 using System.Data;
@@ -11,22 +9,13 @@ using System.Globalization;
 
 namespace AutoPocoIO.MsSql.DynamicSchema.Runtime
 {
-    internal static class DynamicExtension
+    internal static partial class DynamicExtension
     {
         public static DbContextOptionsBuilder ReplaceSqlServerEFCachingServices(this DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.ReplaceService<IRelationalTypeMappingSource, AutoPocoIO.DynamicSchema.Services.NoCache.SqlServerTypeMappingSource>();
             return optionsBuilder;
         }
-
-        public static DbContextOptionsBuilder ReplaceSqlServerEFCrossDbServices(this DbContextOptionsBuilder optionBuilder)
-        {
-            optionBuilder.ReplaceService<IQuerySqlGeneratorFactory, AutoPocoIO.DynamicSchema.Services.CrossDb.SqlServerQuerySqlGeneratorFactory>();
-            optionBuilder.ReplaceService<IModelValidator, AutoPocoIO.DynamicSchema.Services.CrossDb.SqlServerModelValidator>();
-            return optionBuilder;
-
-        }
-
         public static IDictionary<string, object> DynamicListFromSql(this IDbAdapter db, string Sql, params DbParameter[] Params)
         {
             using (var cmd = db.CreateDbCommand())

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPocoIO_3X.MsSql", "..\src\AutoPocoIO_3X.MsSql\AutoPocoIO_3X.MsSql.csproj", "{49D3E7CD-A27A-4F41-B024-639AC6D305C4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AutoPocoIO.MsSql.Shared", "..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.shproj", "{5825D11F-D0C7-497E-AE13-4B11CD38A394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPocoIO_3X.MsSql.test", "..\tests\AutoPocoIO_3X.MsSql.test\AutoPocoIO_3X.MsSql.test.csproj", "{EEC8360D-5B23-467C-99B8-98B36F8527CC}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AutoPocoIO.MsSql.Shared.test", "..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO.MsSql.Shared.test.shproj", "{FACA4E64-6EB9-4F87-AFC7-30AD57223406}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{49d3e7cd-a27a-4f41-b024-639ac6d305c4}*SharedItemsImports = 5
+		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{5825d11f-d0c7-497e-ae13-4b11cd38a394}*SharedItemsImports = 13
+		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems*{eec8360d-5b23-467c-99b8-98b36f8527cc}*SharedItemsImports = 5
+		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems*{faca4e64-6eb9-4f87-afc7-30ad57223406}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49D3E7CD-A27A-4F41-B024-639AC6D305C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D3E7CD-A27A-4F41-B024-639AC6D305C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D3E7CD-A27A-4F41-B024-639AC6D305C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D3E7CD-A27A-4F41-B024-639AC6D305C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D7ED16F-5DD1-4F76-9F79-3A61621D4445}
+	EndGlobalSection
+EndGlobal

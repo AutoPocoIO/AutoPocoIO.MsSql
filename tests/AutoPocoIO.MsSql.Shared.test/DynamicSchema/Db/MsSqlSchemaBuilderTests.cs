@@ -1,5 +1,4 @@
 ﻿using AutoPocoIO.DynamicSchema.Db;
-using AutoPocoIO.DynamicSchema.Enums;
 using AutoPocoIO.DynamicSchema.Models;
 using AutoPocoIO.DynamicSchema.Util;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -9,9 +8,13 @@ using Moq;
 using System;
 using System.Data;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+#if NETCORE3_1
+using Microsoft.Data.SqlClient;
+#else
+using System.Data.SqlClient;
+#endif
 
 namespace AutoPocoIO.test.DynamicSchema.Db
 {
@@ -77,7 +80,11 @@ namespace AutoPocoIO.test.DynamicSchema.Db
             var coreOptions = options.FindExtension<CoreOptionsExtension>();
             var dbOptions = options.FindExtension<SqlServerOptionsExtension>();
 
+#if EF22
             Assert.AreEqual(13, coreOptions.ReplacedServices.Count());
+#else
+            Assert.AreEqual(10, coreOptions.ReplacedServices.Count());
+#endif
             Assert.AreEqual("Data Source=test", dbOptions.ConnectionString);
         }
 

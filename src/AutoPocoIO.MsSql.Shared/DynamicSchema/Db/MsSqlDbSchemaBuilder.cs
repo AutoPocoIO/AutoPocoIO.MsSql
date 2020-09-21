@@ -5,7 +5,12 @@ using AutoPocoIO.Exceptions;
 using AutoPocoIO.MsSql.DynamicSchema.Runtime;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+
+#if NETCORE3_1
+using Microsoft.Data.SqlClient;
+#else
 using System.Data.SqlClient;
+#endif
 
 namespace AutoPocoIO.DynamicSchema.Db
 {

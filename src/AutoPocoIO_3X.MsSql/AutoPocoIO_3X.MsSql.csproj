@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net461;netcoreapp3.1;</TargetFrameworks>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>Extends AutoPoco to work with MsSql Server databases</Description>
     <PackageId>AutoPocoIO.MsSql</PackageId>
@@ -23,6 +23,10 @@
     <PackageIcon>AutoPocoIcon.jpeg</PackageIcon>
     <PackageTags>autopoco poco-generator poco mssql</PackageTags>
     <PackageProjectUrl>http://autopoco.io/</PackageProjectUrl>
+    <FileVersion>3.1.0.0</FileVersion>
+    <AssemblyVersion>3.1.0.0</AssemblyVersion>
+    <AssemblyName>AutoPocoIO.MsSql</AssemblyName>
+    <RootNamespace>AutoPocoIO.MsSql</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,13 +35,17 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.4" />
-    <PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="[3.1.0, 3.2.0)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="3.1.*" />
+    <!--<PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />-->
+    <PackageReference Include="AutoPocoIO" Version="3.1.0-beta.318" />
   </ItemGroup>
-  
+
   <Import Project="..\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems" Label="Shared" />
 
-
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
+    <DefineConstants>NETCORE3_1</DefineConstants>
+  </PropertyGroup>
 </Project>

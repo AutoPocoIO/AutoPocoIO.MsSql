@@ -1,6 +1,9 @@
-﻿using AutoPocoIO.DynamicSchema.Enums;
-using AutoPocoIO.Resources;
+﻿using AutoPocoIO.Resources;
+#if NETCORE3_1
+using Microsoft.Data.SqlClient;
+#else
 using System.Data.SqlClient;
+#endif
 
 namespace AutoPocoIO.MsSql.DynamicSchema.Db
 {

@@ -27,6 +27,8 @@
     <AssemblyVersion>2.2.0.0</AssemblyVersion>
     <AssemblyName>AutoPocoIO.MsSql</AssemblyName>
     <RootNamespace>AutoPocoIO.MsSql</RootNamespace>
+
+    <DefineConstants>EF22</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

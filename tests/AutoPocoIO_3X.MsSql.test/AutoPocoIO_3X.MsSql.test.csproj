@@ -8,12 +8,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp3.1;</TargetFrameworks>
+    <TargetFrameworks>net461;netcoreapp2.2;netcoreapp3.1;</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <AssemblyOriginatorKeyFile>..\..\sln\AutoPocoIO.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyName>AutoPocoIO.MsSql.test</AssemblyName>
     <RootNamespace>AutoPocoIO.MsSql.test</RootNamespace>
+
+    <DefineConstants>NETCORE3_1</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,10 +35,14 @@
 
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
-    <DefineConstants>net461;NETFULL;</DefineConstants>
+    <DefineConstants>net461;NETFULL;EF31;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-    <DefineConstants>NETCORE;NETCORE3_1</DefineConstants>
+    <DefineConstants>NETCORE;EF31;NETCORE3_1</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'">
+    <DefineConstants>NETCORE;EF31;NETCORE3_1</DefineConstants>
   </PropertyGroup>
 
   <Import Project="..\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems" Label="Shared" />

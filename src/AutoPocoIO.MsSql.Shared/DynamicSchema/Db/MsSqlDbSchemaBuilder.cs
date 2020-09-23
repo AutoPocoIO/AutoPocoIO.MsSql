@@ -6,10 +6,10 @@ using AutoPocoIO.MsSql.DynamicSchema.Runtime;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
-#if NETCORE3_1
-using Microsoft.Data.SqlClient;
-#else
+#if EF22
 using System.Data.SqlClient;
+#else
+using Microsoft.Data.SqlClient;
 #endif
 
 namespace AutoPocoIO.DynamicSchema.Db

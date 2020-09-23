@@ -10,10 +10,10 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Reflection;
-#if NETCORE3_1
-using Microsoft.Data.SqlClient;
-#else
+#if EF22
 using System.Data.SqlClient;
+#else
+using Microsoft.Data.SqlClient;
 #endif
 
 namespace AutoPocoIO.test.DynamicSchema.Db

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp2.2;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>Extends AutoPoco to work with MsSql Server databases</Description>
     <PackageId>AutoPocoIO.MsSql</PackageId>
@@ -40,7 +40,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="[2.2.0, 2.3.0)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.*" />
     <!--<PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />-->
-    <PackageReference Include="AutoPocoIO" Version="2.2.0-beta.318" />
+    <PackageReference Include="AutoPocoIO.Core" Version="2.2.0-beta.329" />
+    
   </ItemGroup>
 
   <Import Project="..\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems" Label="Shared" />

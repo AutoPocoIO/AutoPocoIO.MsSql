@@ -13,12 +13,23 @@ namespace AutoPocoIO.DynamicSchema.Services.CrossDb
         {
         }
 
-        protected override Expression VisitTable(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpression tableExpression)
+        protected override Expression VisitExtension(Expression extensionExpression)
         {
-            //if (tableExpression is TableExpression tableExpressionWithDb)
-              //  Sql.Append(SqlGenerator.DelimitIdentifier(tableExpressionWithDb.DatabaseName) + ".");
+            if (extensionExpression is TableExpression tableExpressionWithDb)
+                return VisitTable(tableExpressionWithDb);
+            else
+                return base.VisitExtension(extensionExpression);
+        }
 
-            return base.VisitTable(tableExpression);
+        protected Expression VisitTable(TableExpression tableExpression)
+        {
+            Sql.Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.DatabaseName) + ".");
+
+            Sql.Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.Name, tableExpression.Schema))
+                .Append(AliasSeparator)
+                .Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.Alias));
+
+            return tableExpression;
         }
     }
 }

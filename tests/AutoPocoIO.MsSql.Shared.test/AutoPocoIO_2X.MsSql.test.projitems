@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DynamicSchema\Db\MsSqlSchemaBuilderTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DynamicSchema\Db\MsSqlTypeMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DynamicSchema\Runtime\EfServiceReplacementTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DynamicSchema\Services\CrossdbTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceCollectionExtensionTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StoredProcedureExtensionsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StoredProcedureTests.cs" />

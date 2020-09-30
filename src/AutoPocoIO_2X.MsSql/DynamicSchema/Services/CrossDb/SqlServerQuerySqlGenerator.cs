@@ -18,7 +18,7 @@ namespace AutoPocoIO.DynamicSchema.Services.CrossDb
 
         public override Expression VisitTable(Microsoft.EntityFrameworkCore.Query.Expressions.TableExpression tableExpression)
         {
-            if (tableExpression is TableExpression tableExpressionWithDb)
+            if (tableExpression is TableExpression tableExpressionWithDb && !string.IsNullOrEmpty(tableExpressionWithDb.DatabaseName))
                 Sql.Append(SqlGenerator.DelimitIdentifier(tableExpressionWithDb.DatabaseName) + ".");
 
             Sql.Append(SqlGenerator.DelimitIdentifier(tableExpression.Table, tableExpression.Schema))

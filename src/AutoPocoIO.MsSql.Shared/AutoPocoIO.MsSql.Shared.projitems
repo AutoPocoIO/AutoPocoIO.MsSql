@@ -6,7 +6,7 @@
     <SharedGUID>5825d11f-d0c7-497e-ae13-4b11cd38a394</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>AutoPocoIO.MsSql.Shared</Import_RootNamespace>
+    <Import_RootNamespace>AutoPocoIO.MsSql</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DynamicSchema\Db\MsSqlConnectionBuilder.cs" />

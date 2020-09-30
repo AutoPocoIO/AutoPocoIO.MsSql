@@ -42,7 +42,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="[2.2.0, 2.3.0)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="2.2.*" />
     <!--<PackageReference Include="AutoPocoIO" Version="1.0.0-rc.1" />-->
-    <PackageReference Include="AutoPocoIO.Core" Version="2.2.0-beta.331" />
+    <PackageReference Include="AutoPocoIO.Core" Version="2.2.0-beta.339" />
     
   </ItemGroup>
 

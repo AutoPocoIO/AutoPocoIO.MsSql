@@ -16,16 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\AutoPocoIO\nuget.config = ..\..\AutoPocoIO\nuget.config
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoPocoIO_3X.Core", "..\..\AutoPocoIO\src\AutoPocoIO_3X.Core\AutoPocoIO_3X.Core.csproj", "{2A0C3FA3-B0E1-4A1E-9E9F-27081DEA3D21}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AutoPocoIO.Core.Shared", "..\..\AutoPocoIO\src\AutoPocoIO.Core.Shared\AutoPocoIO.Core.Shared.shproj", "{8AAA2E58-1EA7-4A81-A8B9-9F8D55345446}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\AutoPocoIO\src\AutoPocoIO.Core.Shared\AutoPocoIO.Core.Shared.projitems*{2a0c3fa3-b0e1-4a1e-9e9f-27081dea3d21}*SharedItemsImports = 5
 		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{49d3e7cd-a27a-4f41-b024-639ac6d305c4}*SharedItemsImports = 5
 		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{5825d11f-d0c7-497e-ae13-4b11cd38a394}*SharedItemsImports = 13
-		..\..\AutoPocoIO\src\AutoPocoIO.Core.Shared\AutoPocoIO.Core.Shared.projitems*{8aaa2e58-1ea7-4a81-a8b9-9f8d55345446}*SharedItemsImports = 13
 		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems*{eec8360d-5b23-467c-99b8-98b36f8527cc}*SharedItemsImports = 5
 		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems*{faca4e64-6eb9-4f87-afc7-30ad57223406}*SharedItemsImports = 13
 	EndGlobalSection
@@ -42,10 +36,6 @@ Global
 		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEC8360D-5B23-467C-99B8-98B36F8527CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A0C3FA3-B0E1-4A1E-9E9F-27081DEA3D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A0C3FA3-B0E1-4A1E-9E9F-27081DEA3D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A0C3FA3-B0E1-4A1E-9E9F-27081DEA3D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A0C3FA3-B0E1-4A1E-9E9F-27081DEA3D21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

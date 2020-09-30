@@ -49,11 +49,11 @@ build_script:
   - cmd: nuget sources add -Name github -Source https://nuget.pkg.github.com/AutoPocoIO/index.json -UserName %GIT_HUB_USER% -Password %GIT_HUB_PASS% 
   - cmd: nuget restore ./sln/AutoPocoIO%PROJECT_SUFFIX%.MsSql.sln -verbosity quiet 
   - cmd: dotnet build ./sln/AutoPocoIO%PROJECT_SUFFIX%.MsSql.sln /p:IsAppVeyor=true --verbosity m -c %CONFIG%
-  - cmd: dotnet pack src/AutoPocoIO%PROJECT_SUFFIX%.MsSql/AutoPocoIO.MsSql.csproj -p:PackageVersion="%VERSION%-beta.%APPVEYOR_BUILD_NUMBER%" -c %CONFIG%
+  - cmd: dotnet pack src/AutoPocoIO%PROJECT_SUFFIX%.MsSql/AutoPocoIO%PROJECT_SUFFIX%.MsSql.csproj -p:PackageVersion="%VERSION%-beta.%APPVEYOR_BUILD_NUMBER%" -c %CONFIG%
 test_script:
  # run the unit tests
-  - ps: iex "$env:OPENCOVER_PREFIX tests\$env:TEST_FOLDER\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test.csproj --framework net461 $env:OPENCOVER_SUFFIX"
-  - ps: iex "$env:OPENCOVER_PREFIX tests\$env:TEST_FOLDER\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test.csproj --framework $env:CORE_VERSION $env:OPENCOVER_SUFFIX"
+  - ps: iex "$env:OPENCOVER_PREFIX tests\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test.csproj --framework net461 $env:OPENCOVER_SUFFIX"
+  - ps: iex "$env:OPENCOVER_PREFIX tests\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test\AutoPocoIO$env:PROJECT_SUFFIX.MsSql.test.csproj --framework $env:CORE_VERSION $env:OPENCOVER_SUFFIX"
   
 artifacts:
   - path: '**\bin\**\*.nupkg' # find all NuGet packages recursively

@@ -67,6 +67,18 @@ namespace AutoPocoIO.DynamicSchema.Db
             return Command;
         }
 
+        protected override IDbCommand BuildSchemaListCommand(IDbConnection dbConnection)
+        {
+            SqlCommand Command = new SqlCommand
+            {
+                CommandType = CommandType.Text,
+                Connection = (SqlConnection)dbConnection,
+                CommandText = _query.BuildListSchemasCommand()
+            };
+
+            return Command;
+        }
+
         protected override IDbCommand BuildStoredProcedureCommand(IDbConnection dbConnection)
         {
             SqlCommand Command = new SqlCommand

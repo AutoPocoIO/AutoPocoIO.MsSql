@@ -103,6 +103,11 @@ namespace AutoPocoIO.DynamicSchema.Db
             order by TableSchema, TableName";
         }
 
+        public string BuildListSchemasCommand()
+        {
+            return "select distinct TABLE_SCHEMA from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA <> 'sys'";
+        }
+
         public virtual string BuildStoredProcedureCommand()
         {
             return $@" select

@@ -19,7 +19,7 @@ using Microsoft.Data.SqlClient;
 
 namespace AutoPocoIO.Resources
 {
-    internal class MsSqlResource : OperationResource, IOperationResource
+    public class MsSqlResource : OperationResource, IOperationResource
     {
         public MsSqlResource(IServiceProvider serviceProvider) : base(serviceProvider) { }
 

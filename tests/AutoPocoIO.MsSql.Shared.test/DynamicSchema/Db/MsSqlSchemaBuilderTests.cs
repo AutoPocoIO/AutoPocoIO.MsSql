@@ -83,7 +83,7 @@ namespace AutoPocoIO.test.DynamicSchema.Db
 #if EF22
             Assert.AreEqual(13, coreOptions.ReplacedServices.Count());
 #else
-            Assert.AreEqual(14, coreOptions.ReplacedServices.Count());
+            Assert.AreEqual(15, coreOptions.ReplacedServices.Count());
 #endif
             Assert.AreEqual("Data Source=test", dbOptions.ConnectionString);
         }

@@ -15,31 +15,7 @@ namespace AutoPocoIO.DynamicSchema.Services.CrossDb
         {
         }
 
-        protected override Expression VisitExtension(Expression extensionExpression)
-        {
-            if (extensionExpression is TableExpression tableExpressionWithDb)
-                return VisitTable(tableExpressionWithDb);
-            else if(extensionExpression is Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpression)
-                return base.VisitExtension(extensionExpression);
-            else
-                return base.VisitExtension(extensionExpression);
-        }
-
-        protected Expression VisitTable(TableExpression tableExpression)
-        {
-            if(!string.IsNullOrEmpty(tableExpression.DatabaseName))
-                Sql.Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.DatabaseName) + ".");
-
-            Sql.Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.Name, tableExpression.Schema))
-                .Append(AliasSeparator)
-                .Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(tableExpression.Alias));
-
-            return tableExpression;
-        }
-
-
-
-        protected void GenerateTop(SelectExpression selectExpression)
+        protected override void GenerateTop(SelectExpression selectExpression)
         {
             if (selectExpression.Limit != null
                 && selectExpression.Offset == null)
@@ -52,7 +28,7 @@ namespace AutoPocoIO.DynamicSchema.Services.CrossDb
             }
         }
 
-        protected void GenerateLimitOffset(SelectExpression selectExpression)
+        protected override void GenerateLimitOffset(SelectExpression selectExpression)
         {
             // Note: For Limit without Offset, SqlServer generates TOP()
             if (selectExpression.Offset != null)

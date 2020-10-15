@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 
 namespace AutoPocoIO.DynamicSchema.Services.CrossDb
 {
@@ -7,7 +6,6 @@ namespace AutoPocoIO.DynamicSchema.Services.CrossDb
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     internal class SqlServerQuerySqlGeneratorFactory : Microsoft.EntityFrameworkCore.Query.Internal.QuerySqlGeneratorFactory, IQuerySqlGeneratorFactoryWithCrossDb
     {
-        private readonly ISqlServerOptions _sqlServerOptions;
         private readonly QuerySqlGeneratorDependencies _dependencies;
 
         /// <summary>

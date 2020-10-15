@@ -19,23 +19,25 @@ namespace AutoPocoIO.test.Factories
     public class ResourceFactoryTests
     {
         private IResourceFactory _resourceFactory;
+        private Guid id = Guid.NewGuid();
+
         public void Init(string resouceType)
         {
             var appAdminService = new Mock<IAppAdminService>();
             appAdminService.Setup(c => c.GetConnection("conn1"))
                 .Returns(new Connector
                 {
-                    Id = "1",
+                    Id = id,
                     Name = "conn1",
                     ResourceType = resouceType,
                     ConnectionStringDecrypted = "connStr1"
 
                 });
 
-            appAdminService.Setup(c => c.GetConnectionById("1"))
+            appAdminService.Setup(c => c.GetConnectionById(id))
               .Returns(new Connector
               {
-                  Id = "1",
+                  Id = id,
                   Name = "conn1",
                   ResourceType = resouceType,
                   ConnectionStringDecrypted = "connStr1"

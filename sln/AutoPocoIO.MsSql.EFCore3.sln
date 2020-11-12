@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AutoPocoIO.MsSql.Shared", "..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.shproj", "{5825D11F-D0C7-497E-AE13-4B11CD38A394}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{215FF4C7-E052-4E87-8283-91060B7CA734}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\AutoPocoIO\nuget.config = ..\..\AutoPocoIO\nuget.config
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoPocoIO.MsSql.EFCore3", "..\src\AutoPocoIO.MsSql.EFCore3\AutoPocoIO.MsSql.EFCore3.csproj", "{D235FED1-9157-4B03-A502-43D6E0603C92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoPocoIO.MsSql.EFCore3.test", "..\tests\AutoPocoIO.MsSql.EFCore3.test\AutoPocoIO.MsSql.EFCore3.test.csproj", "{26AF5FBA-956B-467A-989C-4482FB01288C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AutoPocoIO.MsSql.Shared.test", "..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO.MsSql.Shared.test.shproj", "{FACA4E64-6EB9-4F87-AFC7-30AD57223406}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO.MsSql.Shared.test.projitems*{26af5fba-956b-467a-989c-4482fb01288c}*SharedItemsImports = 5
+		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{5825d11f-d0c7-497e-ae13-4b11cd38a394}*SharedItemsImports = 13
+		..\src\AutoPocoIO.MsSql.Shared\AutoPocoIO.MsSql.Shared.projitems*{d235fed1-9157-4b03-a502-43d6e0603c92}*SharedItemsImports = 5
+		..\tests\AutoPocoIO.MsSql.Shared.test\AutoPocoIO.MsSql.Shared.test.projitems*{faca4e64-6eb9-4f87-afc7-30ad57223406}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D235FED1-9157-4B03-A502-43D6E0603C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D235FED1-9157-4B03-A502-43D6E0603C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D235FED1-9157-4B03-A502-43D6E0603C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D235FED1-9157-4B03-A502-43D6E0603C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26AF5FBA-956B-467A-989C-4482FB01288C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26AF5FBA-956B-467A-989C-4482FB01288C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26AF5FBA-956B-467A-989C-4482FB01288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26AF5FBA-956B-467A-989C-4482FB01288C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D7ED16F-5DD1-4F76-9F79-3A61621D4445}
+	EndGlobalSection
+EndGlobal

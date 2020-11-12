@@ -14,10 +14,12 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyName>AutoPocoIO.MsSql.test</AssemblyName>
     <RootNamespace>AutoPocoIO.MsSql.test</RootNamespace>
+
+    <DefineConstants>NETCORE3_1</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="Moq" Version="4.13.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
@@ -28,19 +30,22 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AutoPocoIO_2X.MsSql\AutoPocoIO_2X.MsSql.csproj" />
+    <ProjectReference Include="..\..\src\AutoPocoIO.MsSql.EFCore3\AutoPocoIO.MsSql.EFCore3.csproj" />
   </ItemGroup>
 
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
-    <DefineConstants>net461;EF22;NETFULL;</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'">
-    <DefineConstants>NETCORE;EF22;NETCORE2_2</DefineConstants>
+    <DefineConstants>net461;NETFULL;EF31;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-    <DefineConstants>NETCORE;EF22;NETCORE3_1</DefineConstants>
+    <DefineConstants>NETCORE;EF31;NETCORE3_1</DefineConstants>
   </PropertyGroup>
-  <Import Project="..\AutoPocoIO.MsSql.Shared.test\AutoPocoIO_2X.MsSql.test.projitems" Label="Shared" />
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'">
+    <DefineConstants>NETCORE;EF31;NETCORE3_1</DefineConstants>
+  </PropertyGroup>
+
+  <Import Project="..\AutoPocoIO.MsSql.Shared.test\AutoPocoIO.MsSql.Shared.test.projitems" Label="Shared" />
+
 
 </Project>
